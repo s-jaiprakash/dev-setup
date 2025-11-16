@@ -1,0 +1,27 @@
+
+ls
+.env
+
+*.env
+
+!env.example
+
+# Backup files
+*.backup
+*.backup.*
+*~
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+
+# Temporary files
+tmp/
+temp/
+*.log

@@ -1,0 +1,51 @@
+# ~/.bashrc
+# Minimal bash configuration - most settings are in ~/.shell_common
+
+# If not running interactively, don't do anything
+case $- in
+    *i*) ;;
+      *) return;;
+esac
+
+# ============================================
+# Bash-Specific History Settings
+# ============================================
+HISTCONTROL=ignoreboth
+HISTSIZE=10000
+HISTFILESIZE=20000
+shopt -s histappend
+
+# ============================================
+# Bash-Specific Options
+# ============================================
+shopt -s checkwinsize
+shopt -s globstar 2>/dev/null
+
+# ============================================
+# Bash Prompt (Simple)
+# ============================================
+# Set a simple prompt (you can customize this)
+PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+
+# ============================================
+# Bash Completion
+# ============================================
+if [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+fi
+
+# ============================================
+# Source Shared Configuration
+# ============================================
+# This contains all aliases, functions, and environment variables
+if [ -f ~/.shell_common ]; then
+    source ~/.shell_common
+fi
+
+# ============================================
+# Bash-Specific Aliases (if any)
+# ============================================
+# Add bash-specific aliases here if needed
+
+# Note: You're using zsh as default, so this file is mainly for compatibility
+# when someone explicitly runs bash
